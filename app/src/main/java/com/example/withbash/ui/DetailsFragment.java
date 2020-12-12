@@ -1,4 +1,4 @@
-package com.example.withbash.ui.profile;
+package com.example.withbash.ui;
 
 import android.os.Bundle;
 
@@ -11,19 +11,25 @@ import android.view.ViewGroup;
 import com.example.withbash.R;
 
 
-public class Profile extends Fragment {
+public class DetailsFragment extends Fragment {
 
 
-    public Profile() {
+    public DetailsFragment() {
         // Required empty public constructor
     }
 
 
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        }
+
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        return inflater.inflate(R.layout.fragment_details, container, false);
     }
 }

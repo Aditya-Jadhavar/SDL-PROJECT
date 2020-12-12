@@ -15,5 +15,12 @@
     <string name="logintext">New Here ? Create Account</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="event_name">Event Name</string>
+    <string name="description">Description</string>
+    <string name="list_view">View</string>
+    <string name="todo">TODO</string>
+    <string name="withbash">WithBash</string>
+    <string name="best_artist">Best Artist</string>
+    <string name="events">Events</string>
 
 </resources>
