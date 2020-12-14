@@ -1,6 +1,7 @@
 package com.example.withbash.ui.events;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -29,8 +30,9 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Events extends Fragment {
+public class Events extends Fragment implements EventListAdapter.OnEventListItemClicked{
 
+    private NavController navController;
     private RecyclerView listView;
     private EventListViewModel eventListViewModel;
 
@@ -57,9 +59,9 @@ public class Events extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        navController = Navigation.findNavController(view);
         listView=view.findViewById(R.id.list_view);
-        adapter=new EventListAdapter();
+        adapter=new EventListAdapter(this);
 
         listView.setLayoutManager(new LinearLayoutManager(getContext()));
         listView.setHasFixedSize(true);
@@ -81,6 +83,12 @@ public class Events extends Fragment {
             }
         });
 
+    }
+    @Override
+    public void onItemClicked(int position) {
+        EventsDirections.ActionNavigationEventsToDetailsFragment action = EventsDirections.actionNavigationEventsToDetailsFragment();
+        action.setPosition(position);
+        navController.navigate(action);
     }
 
 

@@ -19,6 +19,11 @@ import java.util.List;
 public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
 
     public List<EventListModel>eventListModels;
+    public OnEventListItemClicked onEventListItemClicked;
+
+    public EventListAdapter(OnEventListItemClicked onEventListItemClicked) {
+        this.onEventListItemClicked = onEventListItemClicked;
+    }
 
     public void setEventListModels(List<EventListModel> eventListModels) {
         this.eventListModels = eventListModels;
@@ -55,7 +60,7 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
 
 
 
-    public class EventViewHolder extends RecyclerView.ViewHolder {
+    public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public KenBurnsView kbvLocation;
         public TextView listTitle;
@@ -70,8 +75,18 @@ public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.Even
            // listImage=itemView.findViewById(R.id.list_image);
             description=itemView.findViewById(R.id.list_desc);
             listTitle=itemView.findViewById((R.id.list_title));
+            listBtn = itemView.findViewById(R.id.list_btn);
+
+            listBtn.setOnClickListener(this);
 
         }
 
+        @Override
+        public void onClick(View v) {
+            onEventListItemClicked.onItemClicked(getAdapterPosition());
         }
+    }
+    public interface OnEventListItemClicked {
+        void onItemClicked(int position);
+    }
     }

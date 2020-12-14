@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
@@ -26,12 +28,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Home extends Fragment {
+public class Home extends Fragment implements EventListAdapter.OnEventListItemClicked{
 
 private ViewPager2 locationViewPager;
     private RecyclerView listView;
     private EventListViewModel eventListViewModel;
     private EventListAdapter adapter;
+    private NavController navController;
 
     public Home() {
         // Required empty public constructor
@@ -51,8 +54,9 @@ private ViewPager2 locationViewPager;
         super.onViewCreated(view, savedInstanceState);
 
         //recyclerview
+        navController = Navigation.findNavController(view);
         listView=view.findViewById(R.id.list_view);
-        adapter=new EventListAdapter();
+        adapter=new EventListAdapter(this);
 
         listView.setLayoutManager(new LinearLayoutManager(getContext()));
         listView.setHasFixedSize(true);
@@ -118,5 +122,12 @@ private ViewPager2 locationViewPager;
             }
         });
 
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+        HomeDirections.ActionNavigationHomeToDetailsFragment action=HomeDirections.actionNavigationHomeToDetailsFragment();
+        action.setPosition(position);
+        navController.navigate(action);
     }
 }
