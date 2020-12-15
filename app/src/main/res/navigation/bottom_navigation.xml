@@ -26,7 +26,11 @@
     <fragment android:id="@+id/navigation_pay"
         android:name="com.example.withbash.ui.pay.Pay"
         android:label="Pay"
-        tools:layout="@layout/fragment_pay"/>
+        tools:layout="@layout/fragment_pay">
+        <action
+            android:id="@+id/action_navigation_pay_to_cart"
+            app:destination="@id/cart" />
+    </fragment>
 
 
     <fragment android:id="@+id/navigation_profile"
