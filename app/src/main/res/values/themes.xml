@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.WithBash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#E3DC37</item>
+        <item name="colorPrimary">#D6D62E</item>
         <item name="colorPrimaryVariant">@color/colorDark</item>
         <item name="colorOnPrimary">@color/cardview_light_background</item>
         <!-- Secondary brand color. -->

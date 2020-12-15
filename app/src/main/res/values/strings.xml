@@ -24,15 +24,15 @@
     <string name="events">Events</string>
 
 
-    <array name="Spinner">
+    <array name="Packages">
         <item>
-            English
+            Package 1
         </item>
         <item>
-            Eng
+            Package 2
         </item>
         <item>
-            Japanese
+            Package 3
         </item>
     </array>
     <string name="title_activity_event_info">Event_info</string>

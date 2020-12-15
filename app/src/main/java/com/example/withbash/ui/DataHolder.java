@@ -18,24 +18,24 @@ public class DataHolder {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPakage() {
-        return pakage;
+    public String getPackages() {
+        return packages;
     }
 
-    public void setPakage(String pakage) {
-        this.pakage = pakage;
+    public void setPackages(String packages) {
+        this.packages = packages;
     }
 
     String date;
 
-    public DataHolder(String date, String phoneNumber, String pakage) {
+    public DataHolder(String date, String phoneNumber, String packages) {
         this.date = date;
         this.phoneNumber = phoneNumber;
-        this.pakage = pakage;
+        this.packages = packages;
+
     }
 
     String phoneNumber;
-    String pakage;
-
+    String packages;
 
 }

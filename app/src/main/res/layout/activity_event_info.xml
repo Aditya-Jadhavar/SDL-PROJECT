@@ -19,6 +19,7 @@
         android:background="@color/colorDark"
         android:ems="10"
         android:hint="Event Name"
+        android:textColor="@color/cardview_light_background"
         android:textColorHint="#CFC8C8"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -36,6 +37,7 @@
         android:background="@color/colorDark"
         android:ems="10"
         android:hint="Date"
+        android:textColor="@color/cardview_light_background"
         android:textColorHint="#CFC8C8"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -53,6 +55,7 @@
         android:background="@color/colorDark"
         android:ems="10"
         android:hint="Phone no"
+        android:textColor="@color/cardview_light_background"
         android:textColorHint="#CFC8C8"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -60,8 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventnamee" />
 
-    <EditText
-        android:id="@+id/pakage"
+    <Spinner
+        android:id="@+id/spinnerPackage"
         android:layout_width="295dp"
         android:layout_height="47dp"
         android:layout_marginStart="30dp"
@@ -69,8 +72,10 @@
         android:layout_marginEnd="30dp"
         android:background="@color/colorDark"
         android:ems="10"
+        android:entries="@array/Packages"
         android:hint="Pakage"
-        android:textColorHint="#CFC8C8"
+        android:textColor="#ECE4E4"
+        android:textColorHint="#EFE9E9"
         android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +91,7 @@
         android:onClick="process"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pakage" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPackage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
