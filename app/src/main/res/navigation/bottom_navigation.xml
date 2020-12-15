@@ -28,6 +28,7 @@
         android:label="Pay"
         tools:layout="@layout/fragment_pay"/>
 
+
     <fragment android:id="@+id/navigation_profile"
         android:name="com.example.withbash.ui.profile.Profile"
         android:label="Profile"
@@ -50,6 +51,11 @@
         android:name="com.example.withbash.ui.EventInfo"
         android:label="activity_event_info"
         tools:layout="@layout/activity_event_info" />
+    <activity
+        android:id="@+id/cart"
+        android:name="com.example.withbash.ui.pay.Cart"
+        android:label="activity_payment"
+        tools:layout="@layout/activity_cart" />
 
 
 </navigation>
