@@ -39,14 +39,15 @@ Spinner t4;
         String Date=t2.getText().toString().trim();
         String phoneNo=t3.getText().toString().trim();
         String packages=t4.getSelectedItem().toString();
+        String cost="10";
 
-        DataHolder obj=new DataHolder(Date,phoneNo,packages);
+        DataHolder obj=new DataHolder(Date,eventName,packages,cost);
 
 
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         DatabaseReference node=db.getReference("Uid");
 
-        node.child(user.getUid()).child(eventName).setValue(obj);
+        node.child(user.getUid()).setValue(obj);
         t1.setText("");
         t2.setText("");
         t3.setText("");
