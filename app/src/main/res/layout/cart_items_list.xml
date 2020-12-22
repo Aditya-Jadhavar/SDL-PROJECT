@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,21 +9,19 @@
     android:background="@drawable/dark_bg"
     >
 
-
-
-
-
     <TextView
         android:id="@+id/cart_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginEnd="229dp"
         android:fontFamily="@font/crimson_text"
         android:text="@string/event_name"
         android:textColor="@color/colorPrimary"
         android:textSize="26sp"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
         <!--app:layout_constraintTop_toBottomOf="@+id/cart_items_card" />-->
 
     <TextView
@@ -44,16 +42,16 @@
         app:lineHeight="28dp" />
 
     <TextView
-        android:id="@+id/total_Price"
+        android:id="@+id/eventPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="38dp"
         android:text="Price"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"/>
-        <!--app:layout_constraintTop_toBottomOf="@+id/cart_items_card" />-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

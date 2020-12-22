@@ -15,10 +15,11 @@ import com.example.withbash.ui.DataHolder;
 
 import java.util.List;
 
-/*public class CartAdapter extends ArrayAdapter{
+public class CartAdapter extends ArrayAdapter{
     private Activity mContext;
     List<DataHolder> Data;
 
+    //DataHolder Uid;
     public CartAdapter(Activity mContext, List<DataHolder> Data){
         super(mContext, R.layout.cart_items_list,Data);
         this.mContext = mContext;
@@ -31,12 +32,12 @@ import java.util.List;
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = mContext.getLayoutInflater();
-       // View listItemView = inflater.inflate(R.layout.cart_items_list,null,attachToRoot: true);
+     //   View listItemView = inflater.inflate(R.layout.cart_items_list,null,attachToRoot: true);
         @SuppressLint("ViewHolder") View listItemView = inflater.inflate(R.layout.cart_items_list,null,true);
 
         TextView tvName = listItemView.findViewById(R.id.cart_title);
         TextView tvPackage =listItemView.findViewById(R.id.cart_package);
-        TextView tvPrice = listItemView.findViewById(R.id.total_Price);
+        TextView tvPrice = listItemView.findViewById(R.id.eventPrice);
 
         DataHolder Uid = Data.get(position);
 
@@ -49,4 +50,4 @@ import java.util.List;
 
     }
 }
-*/
+

@@ -18,6 +18,8 @@ public class DataHolder {
        // this.phoneNumber = phoneNumber;
    // }
 
+    public DataHolder(){}
+
     public String getPackages() {
         return packages;
     }

@@ -1,5 +1,8 @@
 package com.example.withbash.ui.pay;
 import com.example.withbash.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.withbash.ui.DataHolder;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -10,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -19,10 +21,11 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
- public class Cart extends AppCompatActivity {
+public class Cart extends AppCompatActivity {
 
-   /* ListView cart_events_listview;
+    ListView listview;
     //ArrayAdapter<String> adapter;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference studentDbRef;
@@ -38,21 +41,21 @@ import java.util.List;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        cart_events_listview = findViewById(R.id.listview_cart);
-        Data = new ArrayList<DataHolder>();
+        listview = findViewById(R.id.listview_cart);
+        Data = new ArrayList<>();
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-       // user = FirebaseAuth.getInstance().getCurrentUser();
+         user = FirebaseAuth.getInstance().getCurrentUser();
 
-       // Uid = user.getUid();
+         Uid = user.getUid();
 
-        studentDbRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        studentDbRef = firebaseDatabase.getReference().child("Uid").child(Uid);
         studentDbRef.addValueEventListener(new ValueEventListener() {
             @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
 
-                    Data.clear();
+                Data.clear();
                 for(DataSnapshot studentdatasnap : dataSnapshot.getChildren()){
 
                     DataHolder students = studentdatasnap.getValue(DataHolder.class);
@@ -61,35 +64,23 @@ import java.util.List;
 
                 }
 
-                //CartAdapter adapter = new ListAdapter(Cart.this,Data);
+
                 CartAdapter adapter = new CartAdapter(Cart.this,Data);
-                cart_events_listview.setAdapter(adapter);
-                   // String eventName = dataSnapshot.child(Uid).child("eventName").getValue(String.class);
-                  //  String packages = dataSnapshot.child(Uid).child("packages").getValue(String.class);
-                  //  String cost = dataSnapshot.child(Uid).child("cost").getValue(String.class);
-                  // Data.add(eventName);
-                  // Data.add(packages);
-                  // Data.add(cost);
+                listview.setAdapter(adapter);
 
-
-
-
-
-                    //CartAdapter adapter = new ListAdapter(Cart.this,Data);
-                 //  CartAdapter adapter = new CartAdapter(Cart.this,Data);
-                   // adapter = new ArrayAdapter<>(Cart.this, android.R.layout.simple_list_item_1,Data);
-                   // cart_events_listview.setAdapter(adapter);
 
 
             }
 
             @Override
-                     public void onCancelled(@NonNull DatabaseError databaseError){
-                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG);
+            public void onCancelled(@NonNull DatabaseError databaseError){
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
 
             }
         });
     }
-    */
 }
+
+
+
 

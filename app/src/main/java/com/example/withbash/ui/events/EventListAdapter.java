@@ -16,7 +16,7 @@ import com.flaviofaria.kenburnsview.KenBurnsView;
 
 import java.util.List;
 
-public class EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
+public class  EventListAdapter extends RecyclerView.Adapter<EventListAdapter.EventViewHolder> {
 
     public List<EventListModel>eventListModels;
     public OnEventListItemClicked onEventListItemClicked;

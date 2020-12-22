@@ -47,7 +47,8 @@ Spinner t4;
         FirebaseDatabase db=FirebaseDatabase.getInstance();
         DatabaseReference node=db.getReference("Uid");
 
-        node.child(user.getUid()).setValue(obj);
+        assert user != null;
+        node.child(user.getUid()).child(phoneNo).setValue(obj);
         t1.setText("");
         t2.setText("");
         t3.setText("");
