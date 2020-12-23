@@ -11,11 +11,11 @@ public class DataHolder {
     }
 
    // public String getPhoneNumber() {
-      //  return phoneNumber;
-    //}
+  //      return phoneNumber;
+  //  }
 
-   // public void setPhoneNumber(String phoneNumber) {
-       // this.phoneNumber = phoneNumber;
+  //  public void setPhoneNumber(String phoneNumber) {
+    //    this.phoneNumber = phoneNumber;
    // }
 
     public DataHolder(){}
@@ -32,14 +32,14 @@ public class DataHolder {
 
     public DataHolder(String date, String eventName, String packages,String cost) {
         this.date = date;
-        //this.phoneNumber = phoneNumber;
+     //   this.phoneNumber = phoneNumber;
         this.packages = packages;
         this.eventName = eventName;
         this.cost = cost;
 
     }
 
-    String phoneNumber;
+    //String phoneNumber;
     String packages;
     String eventName;
     String cost;

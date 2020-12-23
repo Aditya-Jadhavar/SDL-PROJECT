@@ -25,16 +25,17 @@
 
 
     <array name="Packages">
-        <item>
-            Package 1
-        </item>
-        <item>
-            Package 2
-        </item>
-        <item>
-            Package 3
-        </item>
+        <item>Package 1</item>
+        <item>Package 2</item>
+        <item>Package 3</item>
     </array>
+    <array name="EventName">
+        <item>Birthday</item>
+        <item>Wedding</item>
+        <item>Anniversary</item>
+        <item>Proposals</item>
+    </array>
+
     <string name="title_activity_event_info">Event_info</string>
     <!--
     This string is used for square devices and overridden by hello_world in
