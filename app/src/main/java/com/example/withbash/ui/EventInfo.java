@@ -19,6 +19,7 @@ import org.w3c.dom.Text;
 public class EventInfo extends AppCompatActivity {
 
 EditText t2,t3;
+
 Spinner t4,t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
