@@ -89,8 +89,8 @@ public class EditProfile extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         DocumentReference docRef = fStore.collection("users").document(user.getUid());
                         Map<String, Object> edited = new HashMap<>();
-                        edited.put("fName", profileFullName.getText().toString());
                         edited.put("email", profileEmail.getText().toString());
+                        edited.put("fName", profileFullName.getText().toString());
                         edited.put("phone", profilePhone.getText().toString());
                         docRef.update(edited).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override

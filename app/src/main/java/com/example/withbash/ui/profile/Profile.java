@@ -83,13 +83,22 @@ public class Profile extends Fragment {
             }
         });
 
-        DocumentReference documentReference = fStore.collection("users").document(userId);
+        DocumentReference documentReference = fStore.document("users/"+userId);
         documentReference.addSnapshotListener(getActivity(), new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
+
                 phone.setText(documentSnapshot.getString("phone"));
                 email.setText(documentSnapshot.getString("email"));
                 fullName.setText(documentSnapshot.getString("fName"));
+
+
+                if (phone.getText().toString().isEmpty() || email.getText().toString().isEmpty() || fullName.getText().toString().isEmpty()) {
+                    email.setText("Email");
+                    fullName.setText("Name");
+                    phone.setText("Phone");
+
+                }
             }
         });
 
@@ -146,6 +155,7 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(),EditProfile.class);
+
                 i.putExtra("fullName",fullName.getText().toString());
                 i.putExtra("email",email.getText().toString());
                 i.putExtra("phone",phone.getText().toString());
