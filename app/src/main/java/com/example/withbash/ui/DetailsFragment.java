@@ -1,5 +1,4 @@
 package com.example.withbash.ui;
-import android.content.ContentValues.*;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
